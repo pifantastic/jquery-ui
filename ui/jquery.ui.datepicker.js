@@ -1697,7 +1697,7 @@ function isArray(a) {
 $.fn.datepicker = function(options){
 
 	/* Initialise the date picker. */
-	if (!$.datepicker.initialized) {
+	if (!$.datepicker.initialized || $($.datepicker._mainDivId).length == 0) {
 		$(document).mousedown($.datepicker._checkExternalClick).
 			find('body').append($.datepicker.dpDiv);
 		$.datepicker.initialized = true;
